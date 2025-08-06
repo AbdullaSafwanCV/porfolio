@@ -1,7 +1,6 @@
 // pages/index.js
-import { useEffect, useState } from "react"; 
+import { useEffect, useState } from "react";
 import Head from "next/head";
-
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(true);
@@ -10,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY) {
-        setShowHeader(false); 
+        setShowHeader(false);
       } else {
         setShowHeader(true);
       }
@@ -103,19 +102,18 @@ export default function Home() {
             About Me
           </h2>
           <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-              I&apos;m a BCA second-year student
-            with a strong interest in fullstack web development.
-            I enjoy learning how both the frontend and backend of web
-            applications work together. Technologies:
-            <span className="text-blue-500">HTML, CSS,
-            JavaScript, React, Next.js, Django, and more.</span> 
+            I&apos;m a BCA second-year student with a strong interest in
+            fullstack web development. I enjoy learning how both the frontend
+            and backend of web applications work together. Technologies:
+            <span className="text-blue-500">
+              HTML, CSS, JavaScript, React, Next.js, Django, and more.
+            </span>
             I love building small projects that challenge me and help me grow.
-              Debugging, experimenting, and watching my code turn into something
-              useful gives me a real sense of accomplishment.
-            In the future, I hope to contribute to open-source projects and
-            collaborate with other developers.
-              This is just the start of my journey, and I&apos;m excited for what&apos;s
-              ahead.
+            Debugging, experimenting, and watching my code turn into something
+            useful gives me a real sense of accomplishment. In the future, I
+            hope to contribute to open-source projects and collaborate with
+            other developers. This is just the start of my journey, and I&apos;m
+            excited for what&apos;s ahead.
           </p>
         </section>
 
@@ -207,41 +205,58 @@ export default function Home() {
             Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:scale-105 transition">
-              <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-1 sm:mb-2">
-                Sticky Wall
-              </h3>
-              <p className="text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">
-                A sticky-note task board built with Django and React for
-                managing to-dos.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:scale-105 transition">
-              <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-1 sm:mb-2">
-                Reminder App
-              </h3>
-              <p className="text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">
-                A React-based app for setting reminders with date and
-                descriptions.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:scale-105 transition">
-              <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-1 sm:mb-2">
-                Portfolio
-              </h3>
-              <p className="text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">
-                This portfolio website built with Next.js and Tailwind.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:scale-105 transition">
-              <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-1 sm:mb-2">
-                Rock Paper Scissors
-              </h3>
-              <p className="text-gray-700 mb-1 sm:mb-2 text-sm sm:text-base">
-                A fun web-based game built with React where players can play
-                Rock Paper Scissors against the computer.
-              </p>
-            </div>
+            {[
+              {
+                title: "Sticky Wall",
+                desc: "A sticky-note task board built with Django and React for managing to-dos.",
+                linkSourceCode: "https://github.com/AbdullaSafwanCV/TodoApp",
+              },
+              {
+                title: "Reminder App",
+                desc: "A React-based app for setting reminders with date and descriptions.",
+                linkSourceCode: "https://github.com/AbdullaSafwanCV/reminder",
+              },
+              {
+                title: "Portfolio",
+                desc: "This portfolio website built with Next.js and Tailwind.",
+                linkSourceCode: "https://github.com/AbdullaSafwanCV/portfolio",
+              },
+              {
+                title: "Rock Paper Scissors",
+                desc: "A fun web-based game built with React where players can play Rock Paper Scissors against the computer.",
+                linkSourceCode:
+                  "https://github.com/AbdullaSafwanCV/Rock--Paper--Scissors-",
+                  liveDemo: "https://rock-paper-scissors-two-psi-48.vercel.app/"
+              },
+            ].map((project, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover:scale-105 transition flex flex-col justify-between"
+              >
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-blue-600 mb-1 sm:mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-700 mb-4 text-sm sm:text-base">
+                    {project.desc}
+                  </p>
+                </div>
+                <div className="mt-auto flex gap-3">
+                  <a
+                    href={project.liveDemo}
+                    className="bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm sm:text-base font-medium hover:bg-blue-700 transition"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.linkSourceCode || "#"}
+                    className="border border-blue-600 text-blue-600 px-3 py-1.5 rounded-full text-sm sm:text-base font-medium hover:bg-blue-50 transition"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
