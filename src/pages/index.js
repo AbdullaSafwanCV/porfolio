@@ -66,7 +66,7 @@ export default function Home() {
         <section className="bg-gradient-to-r from-blue-100 via-blue-50 to-white text-center py-12 sm:py-20 mb-8 shadow-sm px-2 sm:px-0">
           <div className=" flex flex-col items-center justify-center mb-6">
             <img
-              src="/safwan.svg"
+              src="/AbdullaSafwan.JPG"
               alt="Abdulla Safwan Profile"
               className="w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-lg object-cover border-4 border-blue-200 mb-4"
             />
