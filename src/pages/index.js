@@ -210,23 +210,26 @@ export default function Home() {
                 title: "Sticky Wall",
                 desc: "A sticky-note task board built with Django and React for managing to-dos.",
                 linkSourceCode: "https://github.com/AbdullaSafwanCV/TodoApp",
+                liveDemo: "https://todo-app-delta-beige.vercel.app/",
               },
               {
                 title: "Reminder App",
                 desc: "A React-based app for setting reminders with date and descriptions.",
                 linkSourceCode: "https://github.com/AbdullaSafwanCV/reminder",
+                liveDemo: "https://reminder-cail.onrender.com",
               },
               {
                 title: "Portfolio",
                 desc: "This portfolio website built with Next.js and Tailwind.",
                 linkSourceCode: "https://github.com/AbdullaSafwanCV/portfolio",
+                liveDemo: "https://porfolio-eight-blond.vercel.app/",
               },
               {
                 title: "Rock Paper Scissors",
                 desc: "A fun web-based game built with React where players can play Rock Paper Scissors against the computer.",
                 linkSourceCode:
                   "https://github.com/AbdullaSafwanCV/Rock--Paper--Scissors-",
-                  liveDemo: "https://rock-paper-scissors-two-psi-48.vercel.app/"
+                liveDemo: "https://rock-paper-scissors-two-psi-48.vercel.app/",
               },
             ].map((project, idx) => (
               <div
